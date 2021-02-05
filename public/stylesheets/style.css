@@ -1,8 +1,3155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin-top:0;
+  padding: 0;  
+  box-sizing: border-box; 
+  background-image: url('../images/musician-349790__480.webp');
+  background-attachment: fixed;  
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-size: cover;
+  /*background-color: brown;*/
+ 
+}
+@media(max-width: 450px) {
+  body {
+    font-size: .90rem;
+  }
+}
+@media(max-width: 275px) {
+  body {
+    font-size: .80rem;
+  }
 }
 
-a {
-  color: #00B7FF;
+/* grid css starts */
+.item1 { 
+  grid-area: header;
+  width: 100%;
+  height: 75px;
+  position: fixed;
+  top: 0; 
+  z-index: 1; 
+   
+}
+.item3 { 
+  grid-area: main;
+  width: 100%;
+  height: 100%;  
+}
+.item5 { 
+  grid-area: footer;
+  width: 100%;
+  height: 70px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas: 
+  'header header header header header header'
+  'main main main main main main'
+  'footer footer footer footer footer footer';
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  grid-gap: 0;
+  /*grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));*/
+}
+/* grid css ends */
+
+/* header css starts */
+.header {  
+  background-color: transparent;
+  opacity: 10;
+}
+
+.header .headernav {
+  display: flex; 
+  position: absolute;
+  top: 17px;
+  right: 30px;
+}
+.header .headernav ul {
+  display: flex; 
+}
+.header .headernav ul li {
+   list-style: none;  
+}
+
+.header .headernav ul li a {
+  text-decoration: none;
+  color: aliceblue;
+  font-size: 20px;
+  padding: 15px;
+  text-align: center;
+}
+.header .headernav ul li a:hover {
+  color: rgb(90, 89, 89);  
+}
+/* dropdown menu css */
+.header .headernav ul li ul {
+  position: absolute;
+  background-image: url('../images/performer-958392__480.webp');
+  background-size: cover;
+  /* background-color: rgba(255, 168, 7, .2);  */
+  border-radius: 5px;
+  overflow: auto;
+  display: none;
+  z-index: 1;  
+}
+
+.header .headernav ul li ul li{
+  border: 1px solid aliceblue;  
+}
+
+.header .headernav ul li:hover ul {
+  display: block;  
+  overflow: hidden;  
+}
+
+#dashboard-logged-in-dropdown {
+  padding-right: 20px;
+}
+
+@media screen and (max-width: 1020px) {
+  .header .headernav ul:not(:last-child) {
+    display: none;
+  }
+}
+@media screen and (max-width: 372px) {
+  .header .headernav ul {
+    display: none;
+  }
+}
+/* header css ends */
+
+/*iconbar css starts*/
+.item1 .iconbar {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 22px;
+  color: aliceblue;
+} 
+.item1 .iconbar:hover {
+  cursor: pointer;
+  color: rgb(90, 89, 89);
+}
+/*iconbar css ends*/
+/* brand-title css starts*/
+.item1 .brand-title {
+  position: absolute;
+  top: 0;
+  left: 55px;
+  z-index: 1;
+  /*
+  font-size: 25px;  
+  text-decoration: none;
+  color: brown;
+  font-weight: bolder;
+  */
+  padding: 2px;
+  
+}
+
+/* logo image css starts */
+.logo-img {
+  width: 180px;
+  height: 60px;
+  object-fit: cover;
+ /* image-resolution: 300dpi;*/
+}
+@media screen and (max-width: 250px) {
+  .logo-img {
+    width: 160px;
+    height: 50px;
+    object-fit: cover;
+   /* image-resolution: 300dpi;*/
+  }
+}
+@media screen and (max-width: 225px) {
+  .logo-img {
+    width: 140px;
+    height: 40px;
+    object-fit: cover;
+   /* image-resolution: 300dpi;*/
+  }
+}
+@media screen and (max-width: 200px) {
+  .logo-img {
+    width: 120px;
+    height: 30px;
+    object-fit: cover;
+   /* image-resolution: 300dpi;*/
+  }
+}
+/* logo image css ends*/
+
+/* brand title css ends */
+/* sidenav css starts */
+.item1 .sidenav-parent {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100vh;
+  background-color: transparent; 
+ 
+}
+
+.item1 .sidenav-parent .sidenav {
+  width: 0;
+  height: 100vh;
+  display: block;
+  /*background-color: orange;*/
+  background-image: url('../images/guitar-2897355__480.webp');
+  background-size: cover;
+  color: aliceblue;
+  position: fixed;
+  z-index: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+  transition: 0.4s;
+  padding-top: 50px;
+    
+}
+
+.item1 .sidenav-parent .sidenav ul {
+  display: block;
+  width: 100%; 
+  padding: 10px; 
+  
+}
+.item1 .sidenav-parent .sidenav ul li {
+  list-style: none; 
+  overflow: hidden; 
+  
+}
+.item1 .sidenav-parent .sidenav ul li a {
+  text-decoration: none;
+  color: aliceblue;
+  font-size: 20px;
+  padding: 20px;
+  text-align: left;
+  
+}
+.item1 .sidenav-parent .sidenav ul li .signoutBtn {
+  padding-left: 20px;
+}
+.item1 .sidenav-parent .sidenav ul li a:hover {
+  color:rgb(90, 89, 89);
+}
+.item1 .sidenav-parent .sidenav ul li .closeBtn {
+  position: absolute;
+  top: -10px;
+  left: -5px;
+  font-size: 28px;
+  font-weight: bolder;
+}
+.item1 .sidenav-parent .sidenav ul li .closeBtn:hover {
+  color: rgb(90, 89, 89);
+}
+
+/* dropdown css for sidenav */
+/*
+.item1 .sidenav-parent .sidenav ul li ul {
+  */
+ /* background-color:  orange; */
+ /*
+  background-image: url('../images/performer-958392__480.webp');
+  background-size: cover;
+  overflow: auto;
+  display: none;
+  
+}
+.item1 .sidenav-parent .sidenav ul li ul li {
+  border: 1px solid aliceblue;
+}
+.item1 .sidenav-parent .sidenav ul li ul li a {
+  font-size: 18px;
+}
+.item1 .sidenav-parent .sidenav ul li:hover ul {
+  display: block;
+}
+*/
+.signoutBtn {
+  background-color: transparent;
+  color: aliceblue;
+  border: none;
+  outline: none;
+  font-size: 20px;
+}
+.signoutBtn:hover {
+  color: rgb(90, 89, 89);
+}
+
+
+/* sidenav css ends */
+
+/* footer css starts*/
+.footer {
+  width: 100%;
+  height: auto;
+  background-color:  transparent;  
+  margin-top: 60px;
+  margin-bottom: 0;  
+  padding: 5px;  
+}
+.footer #taptotopButton {
+  width: 100%;
+  height: auto;
+  font-size: 18px;
+  padding-bottom: 10px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: aliceblue;
+}
+.footer .row {
+  display: flex; 
+  width: 100%; 
+  
+}
+/*
+.footer .row .column {
+  width: 25%;  
+  color: aliceblue;
+  font-size: 20px;
+  text-align: center;
+}
+*/
+.footer .row .column-1 {
+  width: 15%;
+  height: auto;  
+  color: aliceblue;
+  font-size: 20px;
+  
+  /*overflow: hidden; */
+}
+.footer .row .column-1 h2 {
+  text-align: center;
+}
+
+.footer .row .column-2 {
+  width: 20%;
+  height: auto;  
+  color: aliceblue;
+  font-size: 20px;
+  text-align: center;
+  /*overflow: hidden; */
+}
+.footer .row .column-3 {
+  width: 40%;
+  height: auto;  
+  color: aliceblue;
+  font-size: 18px;
+  text-align: center;
+  
+  /*overflow: hidden; */
+}
+.footer .row .column-3 address {
+  text-align: left;
+  padding-left: 50px;
+}
+.footer .row .column-3 address a {
+  text-decoration: none;
+}
+.footer .row .column-4 {
+  width: 25%;
+  height: auto;  
+  color: aliceblue;
+  font-size: 20px;
+  text-align: center;
+  /*overflow: hidden; */
+}
+.footer .row .column ul {
+  
+  text-align: left;
+  font-size: 16px;
+  padding-left: 30%;
+}
+.footer .row .column ul li {
+  list-style: none;
+}
+.footer .row .column ul li a {
+  text-decoration: none;
+  color: aliceblue;
+  
+}
+.footer .row .column ul li a:hover {
+  color: rgb(90, 89, 89);
+}
+.footer .row .column-4 .a:hover {
+  color: rgb(90, 89, 89);
+}
+.footer .row .column-4 .fa {
+  padding: 5%;
+  text-decoration: none;
+  font-size: 25px;
+  background-color: transparent;
+  
+}
+
+@media screen and (max-width: 750px) {
+  .footer .row {
+  display: block;
+     
+  }
+  .footer .row .column {    
+     
+    
+    width: 100%;
+    
+  }  
+  .footer .row .column ul {    
+    display: flex;    
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    
+  } 
+  .footer .row .column-1 ul li{    
+    padding: 45px;
+    
+  } 
+  .footer .row .column ul li a {
+    text-align: left;
+  }
+
+  .footer .row .column-2 ul li{    
+    padding: 10px;
+    
+  } 
+
+}
+@media screen and (max-width: 700px) {
+  .footer .row .column-1 ul li{    
+    padding: 35px;
+    
+  } 
+  
+  .footer .row .column-2 ul li{    
+    padding: 8px;
+    
+  }
+}
+@media screen and (max-width: 675px) {
+  .footer .row .column-2 ul { 
+    display: block;   
+    width: 100%;
+    padding-left: 30px;
+    
+  }
+}
+@media screen and (max-width: 600px) {
+  .footer .row .column-1 ul li{    
+    padding: 30px;
+    
+  } 
+}
+@media screen and (max-width: 550px) {
+  .footer .row .column-1 ul li{    
+    padding: 25px;
+    
+  } 
+}
+@media screen and (max-width: 500px) {
+  .footer .row .column-1 ul li{    
+    padding: 20px;
+    
+  } 
+}
+@media screen and (max-width: 450px) {
+  .footer .row .column-1 ul li{    
+    padding: 15px;
+    
+  } 
+}
+@media screen and (max-width: 400px) {
+  .footer .row .column-1 ul li{    
+    padding: 10px;
+    
+  } 
+}
+@media screen and (max-width: 350px) {
+  .footer .row .column-1 ul li{    
+    padding: 8px;
+    
+  } 
+}
+@media screen and (max-width: 325px ) {
+  .footer .row .column-1 ul {    
+    display: block;
+    padding-left: 30px;
+  }
+  .footer .row .column-1 ul li {
+    padding: 5px;
+  } 
+}
+/* footer css ends */
+.main .welcome {
+ /* background-color: brown;*/
+  width: 100%;
+  height: auto;
+  padding-top: 65px;
+  margin-top: 0;  
+}
+.main .welcome h1 {
+  text-align: center;
+  padding-bottom: 25px;
+  color: aliceblue;
+}
+.main .welcome h2 {
+  text-align: center;
+  color: aliceblue;
+}
+
+.main .welcome .row {
+  display: flex;
+  width: 100%;
+  height: auto;
+}
+.main .welcome .row .column {
+  width: 50%;
+  height: auto;
+  /*border: 1px solid white;  */
+}
+.main .welcome .row .column h3 {
+  text-align: center;
+  padding: 15px 15px 0 15px;
+  
+}
+@media(max-width: 420px) {
+  .main .welcome .row .column h3 {
+    text-align: center;
+    padding: 10px 10px 0 10px;
+    
+  }
+}
+@media(max-width: 400px) {
+  .main .welcome .row .column h3 {
+    text-align: center;
+    padding: 6px 6px 0 6px;
+    
+  }
+  
+}
+.main .welcome .row .column-right {
+  color: white;  
+  text-align: center;
+  /*border-top: 1px solid aliceblue;*/
+  border-left: none;
+  border-right: none;
+}
+@media(max-width: 380px) {
+  .main .welcome .row {
+    display: block;
+    width: 100%;
+    height: auto;
+    /*border: 1px solid white;  */
+  }
+  .main .welcome .row .column {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    /*border: 1px solid white;  */
+  }
+}
+.about {
+  width: 100%;
+  height: auto;
+  background-color:  transparent;
+  color: aliceblue; 
+  padding: 60px; 
+  padding-left: 40px; 
+  padding-right: 40px;
+  text-align: center;
+}
+@media(max-width: 450px) {
+.about {
+  padding-left: .9rem;
+  padding-right: .9rem;
+}
+}
+.about p {
+  text-align: left;
+  font-size: 20px;  
+}
+
+.whyus {
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+  color: aliceblue;  
+  padding: 60px 10px 60px 10px;
+  float: center;
+  text-align: center;
+  border: 1px solid aliceblue;
+  border-left: none;
+  border-right: none;
+
+}
+@media(max-width: 450px) {
+.whyus {
+  padding-left: .9rem;
+  padding-right: .9rem;
+}
+}
+.whyus p {
+  text-align: left;
+  padding-left: 5%;
+  justify-items: center;
+  font-size: 20px;
+}
+/* Services Css starts here*/
+.main .services, .main .music-production, .main .vocal-classes, .main .guitar-classes, .main .tabla-classes, .main .piano-classes, .main .harmonium-classes, .main .book-live-concert, .main .audio-record-your-song, .main .video-shoot-your-song, .main .gallery, .main .music-classes {
+  /* background-color: brown;*/
+   width: 100%;
+   height: auto;
+   padding-top: 70px;
+   margin-top: 0;
+   
+ } 
+ .main .services h1, .main .music-production h1, .main .vocal-classes h1, .main .guitar-classes h1, .main .tabla-classes h1, .main .piano-classes h1, .main .harmonium-classes h1, .main .book-live-concert h1, .main .audio-record-your-song h1, .main .video-shoot-your-song h1, .main .gallery h1, .main .music-classes h1 {
+   text-align: center;
+   padding-bottom: 25px;
+   color: aliceblue;
+ }
+ /* Services Css ends here*/
+/* sign in modal css starts here */
+.modal-parent-signin {
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    background-color: transparent; 
+    display: none;
+    z-index: 2;
+    
+}
+
+.modal-signin {
+  position: absolute;
+  top: 10%;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 15px;
+  height: auto;
+  overflow: hidden;
+  border: 5px solid aliceblue;
+  /*border: 5px solid  rgb(90, 89, 89);
+  border: none;*/
+  border-radius: 10px;
+  /*
+  background-color: transparent; 
+  */
+  background-image: url('../images/guitar-2897355__480.webp');
+  background-size: cover; 
+  color: aliceblue; 
+  position: relative;
+  animation: 1s drop;
+  display: block;
+  z-index: 2;
+ }
+ 
+ @keyframes drop {
+  0% {
+   top: -200px;
+  }
+  100% {
+   top: 10%;
+  }
+}
+
+.X-signin {
+  position: absolute;
+  top: 7px;
+  right: 10px;
+  font-size: 25px;
+  
+}
+.X-signin:hover {
+  cursor: pointer;
+  
+}
+
+.modal-parent-signin .modal-signin form input {
+  width: 100%;
+  border: 3px solid aliceblue;
+  border-radius: 10px;
+  outline: none;
+  padding: 10px;
+  background-color: transparent; 
+  color: aliceblue;
+  
+}
+
+.modal-parent-signin .modal-signin form button {
+  width: 20%;
+  border: 3px solid aliceblue;
+  border-radius: 10px;
+  outline: none;
+  padding: 10px;
+  background-color:  transparent; 
+  color: aliceblue;
+  margin-right: 20px;
+} 
+.modal-parent-signin .modal-signin form a {
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px;
+  margin-right: 20px;
+  color: aliceblue;
+}
+
+/* sign in modal css ends here */
+
+/* sign up modal css starts here*/
+.modal-parent-signup {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200vh;
+  background-color: transparent;
+  display: none; 
+  z-index: 2; 
+}
+
+.modal-signup {
+position: absolute;
+top: 5%;
+margin-left: 10%;
+margin-right: 10%;
+padding: 15px;
+height: auto;
+overflow: hidden;
+border: 5px solid aliceblue;
+border-radius: 10px;
+/*background-color:  transparent; */
+background-image: url('../images/guitar-2897355__480.webp');
+background-size: cover;
+color:aliceblue; 
+position: relative;
+animation: 1s drop;
+display: block;
+}
+
+@keyframes drop {
+0% {
+ top: -200px;
+}
+100% {
+ top: 5%;
+}
+}
+
+.X-signup {
+position: absolute;
+top: 7px;
+right: 10px;
+font-size: 25px;
+
+}
+.X-signup:hover {
+cursor: pointer;
+
+}
+
+.modal-parent-signup .modal-signup form input {
+width: 100%;
+border: 3px solid aliceblue;
+border-radius: 10px;
+outline: none;
+padding: 10px;
+background-color:  transparent; 
+color: aliceblue;
+}
+/*need to work on textarea css again*/
+.modal-parent-signup .modal-signup form textarea {
+  width: 100%;
+  height: auto;
+  border: 3px solid aliceblue;
+  outline: none;
+  padding: 10px;
+  background-color:  transparent; 
+  color:  aliceblue;
+  }
+
+.modal-parent-signup .modal-signup form button {
+width: 20%;
+border: 3px solid  aliceblue;
+border-radius: 10px;
+outline: none;
+padding: 10px;
+background-color:  transparent;
+color:  aliceblue;
+margin-right: 30px;
+} 
+@media (max-width: 1000px) {
+  .modal-parent-signup .modal-signup form button {
+    width: 100%;
+    border: 3px solid  aliceblue;
+    border-radius: 10px;
+    outline: none;
+    padding: 10px;
+    background-color:  transparent;
+    color: aliceblue;
+    margin-right: 20px;
+    margin-bottom: 5px;
+    }   
+}
+@media (max-width: 480px) {
+  .modal-parent-signup .modal-signup h1 {
+    font-size: .75rem;
+  }
+  }
+  @media (max-width: 380px) {
+    .modal-parent-signup .modal-signup h1 {
+      font-size: .50rem;
+    }
+}
+@media(max-width: 225px) {
+  .modal-parent-signup .modal-signup form button {
+    font-size: 0.75em;
+  }
+}
+.modal-parent-signup .modal-signup form a {
+text-decoration: none;
+font-size: 18px;
+padding: 10px;
+margin-right: 20px;
+}
+/* sign up modal css ends here*/
+
+/* sign up Admin modal css starts here*/
+.modal-parent-signup-admin {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200vh;
+  background-color: transparent;
+  display: none; 
+  z-index: 2; 
+}
+
+.modal-signup-admin {
+position: absolute;
+top: 5%;
+margin-left: 10%;
+margin-right: 10%;
+padding: 15px;
+height: auto;
+overflow: hidden;
+border: 5px solid aliceblue;
+border-radius: 10px;
+/*background-color:  transparent; */
+background-image: url('../images/guitar-2897355__480.webp');
+background-size: cover;
+color:aliceblue; 
+position: relative;
+animation: 1s drop;
+display: block;
+}
+
+@keyframes drop {
+0% {
+ top: -200px;
+}
+100% {
+ top: 5%;
+}
+}
+
+.X-signup-admin {
+position: absolute;
+top: 7px;
+right: 10px;
+font-size: 25px;
+
+}
+.X-signup-admin:hover {
+cursor: pointer;
+
+}
+
+.modal-parent-signup-admin .modal-signup-admin form input {
+width: 100%;
+border: 3px solid aliceblue;
+border-radius: 10px;
+outline: none;
+padding: 10px;
+background-color:  transparent; 
+color: aliceblue;
+}
+/*need to work on textarea css again*/
+.modal-parent-signup-admin .modal-signup-admin form textarea {
+  width: 100%;
+  height: auto;
+  border: 3px solid aliceblue;
+  outline: none;
+  padding: 10px;
+  background-color:  transparent; 
+  color:  aliceblue;
+  }
+
+.modal-parent-signup-admin .modal-signup-admin form button {
+width: 20%;
+border: 3px solid  aliceblue;
+border-radius: 10px;
+outline: none;
+padding: 10px;
+background-color:  transparent;
+color:  aliceblue;
+margin-right: 20px;
+} 
+.modal-parent-signup-admin .modal-signup-admin form a {
+text-decoration: none;
+font-size: 18px;
+padding: 10px;
+margin-right: 20px;
+}
+/* sign up Admin modal css ends here*/
+
+/* Customer sign up modal from modal admin css starts here*/
+.modal-parent-signup-from-modaladmin {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200vh;
+  background-color: transparent;
+  display: none; 
+  z-index: 2; 
+}
+
+.modal-signup-from-modaladmin {
+position: absolute;
+top: 5%;
+margin-left: 10%;
+margin-right: 10%;
+padding: 15px;
+height: auto;
+overflow: hidden;
+border: 5px solid aliceblue;
+border-radius: 10px;
+/*background-color:  transparent; */
+background-image: url('../images/guitar-2897355__480.webp');
+background-size: cover;
+color:aliceblue; 
+position: relative;
+animation: 1s drop;
+display: block;
+}
+
+@keyframes drop {
+0% {
+ top: -200px;
+}
+100% {
+ top: 5%;
+}
+}
+
+.X-signup-from-modaladmin {
+position: absolute;
+top: 7px;
+right: 10px;
+font-size: 25px;
+
+}
+.X-signup-from-modaladmin:hover {
+cursor: pointer;
+
+}
+
+.modal-parent-signup-from-modaladmin .modal-signup-from-modaladmin form input {
+width: 100%;
+border: 3px solid aliceblue;
+border-radius: 10px;
+outline: none;
+padding: 10px;
+background-color:  transparent; 
+color: aliceblue;
+}
+/*need to work on textarea css again*/
+.modal-parent-signup-from-modaladmin .modal-signup-from-modaladmin form textarea {
+  width: 100%;
+  height: auto;
+  border: 3px solid aliceblue;
+  outline: none;
+  padding: 10px;
+  background-color:  transparent; 
+  color:  aliceblue;
+  }
+
+.modal-parent-signup-from-modaladmin .modal-signup-from-modaladmin form button {
+width: 20%;
+border: 3px solid  aliceblue;
+border-radius: 10px;
+outline: none;
+padding: 10px;
+background-color:  transparent;
+color:  aliceblue;
+margin-right: 20px;
+} 
+.modal-parent-signup-from-modaladmin .modal-signup-from-modaladmin form a {
+text-decoration: none;
+font-size: 18px;
+padding: 10px;
+margin-right: 20px;
+}
+/*customer sign up modal from modal admin css ends here*/
+
+/* Give your details modal css starts here*/
+.modal-parent-giveyourdetails {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200vh;
+  background-color: transparent;
+  display: none;  
+}
+
+.modal-giveyourdetails {
+position: absolute;
+top: 5%;
+margin-left: 10%;
+margin-right: 10%;
+padding: 15px;
+height: auto;
+overflow: hidden;
+border: 5px solid brown;
+border-radius: 10px;
+background-color:  transparent; 
+color: brown; 
+position: relative;
+animation: 1s drop;
+display: block;
+}
+
+@keyframes drop {
+0% {
+ top: -200px;
+}
+100% {
+ top: 5%;
+}
+}
+
+.X-giveyourdetails {
+position: absolute;
+top: 7px;
+right: 10px;
+font-size: 25px;
+
+}
+.X-giveyourdetails:hover {
+cursor: pointer;
+
+}
+
+.modal-parent-giveyourdetails .modal-giveyourdetails form input {
+width: 100%;
+border: 3px solid brown;
+border-radius: 10px;
+outline: none;
+padding: 10px;
+background-color:  transparent; 
+color: brown;
+}
+/*need to work on textarea css again*/
+.modal-parent-giveyourdetails .modal-giveyourdetails form textarea {
+  width: 100%;
+  height: auto;
+  border: 3px solid brown;
+  border-radius: 10px;
+  outline: none;
+  padding: 10px;
+  background-color:  transparent; 
+  color: brown;
+  }
+
+.modal-parent-giveyourdetails .modal-giveyourdetails form button {
+width: 20%;
+border: 3px solid brown;
+border-radius: 10px;
+outline: none;
+padding: 10px;
+background-color: transparent; 
+color: brown;
+margin-right: 20px;
+} 
+.modal-parent-giveyourdetails .modal-giveyourdetails form a {
+text-decoration: none;
+font-size: 18px;
+padding: 10px;
+margin-right: 20px;
+}
+
+/* Give Your Details modal css ends here*/
+/* Website Features List Modal css strts here*/
+.modal-parent-websitefeatureslist {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200vh;
+  background-color: transparent;
+  display: none;  
+}
+
+.modal-websitefeatureslist {
+position: absolute;
+top: 5%;
+margin-left: 10%;
+margin-right: 10%;
+padding: 15px;
+height: auto;
+overflow: hidden;
+border: 5px solid brown;
+border-radius: 10px;
+background-color:  transparent; 
+color: brown; 
+position: relative;
+animation: 1s drop;
+display: block;
+}
+
+@keyframes drop {
+0% {
+ top: -200px;
+}
+100% {
+ top: 5%;
+}
+}
+
+.X-websitefeatureslist {
+position: absolute;
+top: 7px;
+right: 10px;
+font-size: 25px;
+
+}
+.X-websitefeatureslist:hover {
+cursor: pointer;
+
+}
+.modal-parent-websitefeatureslist .modal-websitefeatureslist form input{
+  width: 20px;
+}
+.modal-parent-websitefeatureslist .modal-websitefeatureslist form label{
+  font-size: 18px;
+  padding: 5px;
+}
+.modal-parent-websitefeatureslist .modal-websitefeatureslist form button {
+  background-color: transparent;
+  border: 3px solid brown;
+  border-radius: 5px;
+  padding: 10px;
+}
+/* Website Features List Css ends here */
+
+/* View Website Features list css starts here*/
+.modal-parent-viewwebsitefeatureslist {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200vh;
+  background-color: transparent;
+  display: none;  
+}
+
+.modal-viewwebsitefeatureslist {
+position: absolute;
+top: 5%;
+margin-left: 10%;
+margin-right: 10%;
+padding: 15px;
+height: auto;
+overflow: hidden;
+border: 5px solid brown;
+border-radius: 10px;
+background-color: transparent; 
+color: brown; 
+position: relative;
+animation: 1s drop;
+display: block;
+}
+
+@keyframes drop {
+0% {
+ top: -200px;
+}
+100% {
+ top: 5%;
+}
+}
+
+.X-viewwebsitefeatureslist {
+position: absolute;
+top: 7px;
+right: 10px;
+font-size: 25px;
+
+}
+.X-viewwebsitefeatureslist:hover {
+cursor: pointer;
+
+}
+.modal-parent-viewwebsitefeatureslist .modal-viewwebsitefeatureslist ul li {
+  list-style-type: none;
+  text-align: left;
+}
+/* View Website Features list css ends here*/
+
+/* website content modal css starts here*/
+
+.modal-parent-website-content {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+  display: none;  
+}
+
+.modal-website-content {
+position: absolute;
+top: 5%;
+margin-left: 10%;
+margin-right: 10%;
+padding: 15px;
+height: auto;
+overflow: hidden;
+border: 5px solid brown;
+border-radius: 10px;
+background-color: transparent; 
+color: brown; 
+position: relative;
+animation: 1s drop;
+display: block;
+}
+
+@keyframes drop {
+0% {
+ top: -200px;
+}
+100% {
+ top: 5%;
+}
+}
+
+.X-website-content {
+position: absolute;
+top: 7px;
+right: 10px;
+font-size: 25px;
+
+}
+.X-website-content:hover {
+cursor: pointer;
+
+}
+
+.modal-parent-website-content .modal-website-content form input {
+width: 100%;
+border: 3px solid brown;
+border-radius: 10px;
+outline: none;
+padding: 10px;
+background-color: transparent; 
+color: brown;
+}
+
+.modal-parent-website-content .modal-website-content form button {
+width: 30%;
+border: 3px solid brown;
+border-radius: 10px;
+outline: none;
+padding: 10px;
+background-color: transparent; 
+color: brown;
+margin-right: 20px;
+} 
+.modal-parent-website-content .modal-website-content form span a {
+text-decoration: none;
+font-size: 18px;
+padding: 10px;
+margin-right: 20px;
+}
+
+/* Website Content modal css ends here*/
+/* View Website Content css starts here*/
+.modal-parent-viewwebsitecontent {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200vh;
+  background-color: transparent;
+  display: none;  
+}
+
+.modal-viewwebsitecontent {
+position: absolute;
+top: 5%;
+margin-left: 10%;
+margin-right: 10%;
+padding: 15px;
+height: auto;
+overflow: hidden;
+border: 5px solid brown;
+border-radius: 10px;
+background-color: transparent;
+color: brown; 
+position: relative;
+animation: 1s drop;
+display: block;
+}
+
+@keyframes drop {
+0% {
+ top: -200px;
+}
+100% {
+ top: 5%;
+}
+}
+
+.X-viewwebsitecontent {
+position: absolute;
+top: 7px;
+right: 10px;
+font-size: 25px;
+
+}
+.X-viewwebsitecontent:hover {
+cursor: pointer;
+
+}
+.modal-parent-viewwebsitecontent .modal-viewwebsitecontent ul li {
+  list-style-type: none;
+  text-align: left;
+}
+/* View Website Content css ends here*/
+
+/* Freelance Work Advertisement modal css starts here*/
+
+.modal-parent-freelancework-advertisement {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: transparent;
+  display: none;  
+}
+
+.modal-freelancework-advertisement {
+position: absolute;
+top: 5%;
+margin-left: 10%;
+margin-right: 10%;
+padding: 15px;
+height: auto;
+overflow: hidden;
+border: 5px solid brown;
+border-radius: 10px;
+background-color: transparent; 
+color: brown; 
+position: relative;
+animation: 1s drop;
+display: block;
+}
+
+@keyframes drop {
+0% {
+ top: -200px;
+}
+100% {
+ top: 10%;
+}
+}
+
+.X-freelancework-advertisement {
+position: absolute;
+top: 7px;
+right: 10px;
+font-size: 25px;
+
+}
+.X-freelancework-advertisement:hover {
+cursor: pointer;
+
+}
+
+.modal-parent-freelancework-advertisement .modal-freelancework-advertisement form select, .modal-parent-freelancework-advertisement .modal-freelancework-advertisement form input {
+width: 100%;
+border: 3px solid brown;
+border-radius: 10px;
+outline: none;
+padding: 10px;
+background-color: transparent;
+color: brown;
+}
+
+.modal-parent-freelancework-advertisement .modal-freelancework-advertisement form button {
+width: 30%;
+border: 3px solid brown;
+border-radius: 10px;
+outline: none;
+padding: 10px;
+background-color: transparent;
+color: brown;
+margin-right: 20px;
+} 
+.modal-parent-freelancework-advertisement .modal-freelancework-advertisement form span a {
+text-decoration: none;
+font-size: 18px;
+padding: 10px;
+margin-right: 20px;
+}
+
+/* Freelance Work Advertisement modal css ends here*/
+
+/* Agreement Modal css strts here*/
+.modal-parent-agreement {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200vh;
+  background-color: transparent;
+  display: none;  
+}
+
+.modal-agreement {
+position: absolute;
+top: 5%;
+margin-left: 10%;
+margin-right: 10%;
+padding: 15px;
+height: auto;
+overflow: hidden;
+border: 5px solid brown;
+border-radius: 10px;
+background-color: transparent; 
+color: brown; 
+position: relative;
+animation: 1s drop;
+display: block;
+}
+
+@keyframes drop {
+0% {
+ top: -200px;
+}
+100% {
+ top: 5%;
+}
+}
+
+.X-agreement {
+position: absolute;
+top: 7px;
+right: 10px;
+font-size: 25px;
+
+}
+.X-agreement:hover {
+cursor: pointer;
+
+}
+/* Agreement Css ends here */
+
+/* chat box Modal css strts here*/
+.modal-parent-chatbox {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200vh;
+  background-color: transparent;
+  display: none;  
+}
+
+.modal-chatbox {
+position: absolute;
+top: 5%;
+margin-left: 10%;
+margin-right: 10%;
+padding: 15px;
+height: auto;
+overflow: auto;
+border: 5px solid brown;
+border-radius: 10px;
+background-color: transparent; 
+color: brown; 
+position: relative;
+animation: 1s drop;
+display: block;
+}
+
+@keyframes drop {
+0% {
+ top: -200px;
+}
+100% {
+ top: 5%;
+}
+}
+
+.X-chatbox {
+position: absolute;
+top: 7px;
+right: 10px;
+font-size: 25px;
+
+}
+.X-chatbox:hover {
+cursor: pointer;
+
+}
+.container-chatbox {
+  width: 100%; 
+  height: auto;
+  border: 2px solid brown;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.container-chatbox .row-1 {
+  display: flex;
+  width: inherit;
+  height: inherit;
+  padding: 0;
+  margin: 0;
+}
+.container-chatbox .row-1 .column {
+  width: 20%;
+  height: auto; 
+  border-right: 1px solid brown;
+}
+.container-chatbox .row-1 .col-5 {
+  border-right: none;
+}
+.container-chatbox .row-1 .column button {
+  background-color: transparent;
+  padding: 5px;
+  border: none;
+  outline: none;
+  
+}
+.container-chatbox .row-1 .column button span {
+  margin-right: 10px;
+}
+.container-chatbox .row-2 {
+  display: flex;
+  width: inherit;
+  height: inherit;
+  padding: 0;
+  margin: 0;
+  border-top: 1.5px solid brown;
+}
+.container-chatbox .row-2 form {
+  width: inherit;
+}
+.container-chatbox .row-2 form input{
+  width: 70%;
+  padding: 5px; 
+  border: none;
+  outline: none;
+  background-color: transparent;
+ 
+}
+.container-chatbox .row-2 form button {
+  width: 30%;  
+  padding: 5px; 
+  border: none;
+  border-left: 1px solid brown;
+  outline: none;
+  background-color: transparent;
+}
+.container-chatbox .row-2 form button span {
+  margin-right: 10px;
+ }
+.container-chatbox .row-3 {
+  display: flex;
+  width: inherit;
+  height: 300px;
+  padding: 0;
+  margin: 0;  
+  border-top: 1.5px solid brown;
+  overflow: auto; 
+}
+.container-chatbox .row-3 .column {
+  width: 50%;
+  height: auto;
+  overflow: auto;
+}
+
+.container-chatbox .row-4 {
+  display: flex;
+  width: inherit;
+  height: inherit;
+  padding: 0;
+  margin: 0;
+  border-top: 1.5px solid brown;
+  overflow: hidden;
+}
+.container-chatbox .row-4 .column {
+  width: 25%;
+  height: auto;
+  border: none;
+  overflow: hidden;
+}
+.container-chatbox .row-4 .col-attach-file-photo, .container-chatbox .row-4 .col-attach-video, .container-chatbox .row-4 .col-attach-sticker {
+  border-right: 1px solid brown;
+}
+/* this one is not working
+.container-chatbox .row-4 .column input {
+  background-color: transparent;
+}
+*/
+.container-chatbox .row-5 {
+  display: flex;
+  width: inherit;
+  height: inherit;
+  padding: 0;
+  margin: 0;
+  border-top: 1.5px solid brown;
+}
+.container-chatbox .row-5 form {
+  display: flex;
+  width: inherit;
+  height: inherit;
+  padding: 0;
+  margin: 0;  
+}
+.container-chatbox .row-5 form input {
+  width: 70%;
+  height: auto;  
+  margin: 0;
+  padding: 5px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+.container-chatbox .row-5 form button {
+  width: 30%;
+  height: auto;
+  padding: 5px;
+  margin: 0;
+  border: none;
+  border-left: 1px solid brown;
+  outline: none;
+  background-color: transparent;
+}
+.container-chatbox .row-5 form button span {
+ margin-right: 10px;
+}
+/*chat box Css ends here */
+
+
+/* Admin Staff edit form modal css starts here*/
+.modal-parent-staff-edit-form {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200vh;
+  background-color: transparent;
+  display: none;  
+}
+
+.modal-staff-edit-form {
+position: absolute;
+top: 5%;
+margin-left: 10%;
+margin-right: 10%;
+padding: 15px;
+height: auto;
+overflow: hidden;
+border: 5px solid brown;
+border-radius: 10px;
+background-color: transparent; 
+color: brown; 
+position: relative;
+animation: 1s drop;
+display: block;
+}
+
+@keyframes drop {
+0% {
+ top: -200px;
+}
+100% {
+ top: 5%;
+}
+}
+
+.X-staff-edit-form {
+position: absolute;
+top: 7px;
+right: 10px;
+font-size: 25px;
+
+}
+.X-staff-edit-form:hover {
+cursor: pointer;
+
+}
+
+.modal-parent-staff-edit-form .modal-staff-edit-form form input {
+width: 100%;
+border: 3px solid brown;
+border-radius: 10px;
+outline: none;
+padding: 10px;
+background-color: transparent; 
+color: brown;
+}
+/*need to work on textarea css again*/
+.modal-parent-staff-edit-form .modal-staff-edit-form form textarea {
+  width: 100%;
+  height: auto;
+  border: 3px solid brown;
+  border-radius: 10px;
+  outline: none;
+  padding: 10px;
+  background-color: transparent; 
+  color: brown;
+  }
+
+.modal-parent-staff-edit-form .modal-staff-edit-form form button {
+width: 20%;
+border: 3px solid brown;
+border-radius: 10px;
+outline: none;
+padding: 10px;
+background-color: transparent; 
+color: brown;
+margin-right: 20px;
+} 
+.modal-parent-staff-edit-form .modal-staff-edit-form form a {
+text-decoration: none;
+font-size: 18px;
+padding: 10px;
+margin-right: 20px;
+}
+
+/* Admin Staff Edit Form modal css ends here*/
+
+/* contact modal css starts here*/
+
+.modal-parent-contact {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200vh;
+  background-color: transparent;
+  display: none;  
+  z-index: 2;
+}
+
+.modal-contact {
+position: absolute;
+top: 5%;
+margin-left: 10%;
+margin-right: 10%;
+padding: 15px;
+height: auto;
+overflow: hidden;
+border: 5px solid aliceblue;
+border-radius: 10px;
+/*background-color: transparent; */
+background-image: url('../images/guitar-2897355__480.webp');
+background-size: cover; 
+color: aliceblue; 
+position: relative;
+animation: 1s drop;
+display: block;
+}
+
+@keyframes drop {
+0% {
+ top: -200px;
+}
+100% {
+ top: 5%;
+}
+}
+
+.X-contact {
+position: absolute;
+top: 7px;
+right: 10px;
+font-size: 25px;
+
+}
+.X-contact:hover {
+cursor: pointer;
+
+}
+
+
+.modal-parent-contact .modal-contact form input {
+width: 100%;
+border: 3px solid aliceblue;
+border-radius: 10px;
+outline: none;
+padding: 10px;
+background-color: transparent;
+color: aliceblue;
+}
+
+.modal-parent-contact .modal-contact form textarea {
+max-width: 100%;
+border: 3px solid aliceblue;
+border-radius: 10px;
+outline: none;
+padding: 10px;
+background-color: transparent;
+color: aliceblue;
+overflow: auto;
+}
+.modal-parent-contact .modal-contact form button {
+width: 20%;
+border: 3px solid aliceblue;
+border-radius: 10px;
+outline: none;
+padding: 10px;
+background-color: transparent;
+color: aliceblue;
+margin-right: 20px;
+} 
+.modal-parent-contact .modal-contact form span a {
+text-decoration: none;
+font-size: 18px;
+padding: 10px;
+margin-right: 20px;
+}
+
+/* contact modal css ends here*/
+
+/* confirm before deleting Account modal css starts here*/
+
+.modal-parent-confirmation-before-delete {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200vh;
+  background-color: transparent;
+  display: none;  
+  z-index: 2;
+}
+
+.modal-confirmation-before-delete {
+position: absolute;
+top: 5%;
+margin-left: 10%;
+margin-right: 10%;
+padding: 10px;
+height: auto;
+overflow: hidden;
+border: 5px solid aliceblue;
+border-radius: 10px;
+/*background-color: transparent; */
+background-image: url('../images/guitar-2897355__480.webp');
+background-size: cover; 
+color: aliceblue; 
+text-align: center;
+position: relative;
+animation: 1s drop;
+display: block;
+}
+
+@keyframes drop {
+0% {
+ top: -200px;
+}
+100% {
+ top: 5%;
+}
+}
+
+.X-confirmation-before-delete {
+position: absolute;
+top: 7px;
+right: 10px;
+font-size: 25px;
+
+}
+.X-confirmation-before-delete:hover {
+cursor: pointer;
+
+}
+.modal-confirmation-before-delete a {
+  background-color: transparent;
+  color: red;
+  border: 3px solid red;
+  border-radius: 5px;
+  padding: 10px;
+  margin-inline: 20px;
+  outline: none;
+  text-decoration: none;
+}
+.modal-confirmation-before-delete button {
+  background-color: transparent;
+  color: aliceblue;
+  border: 3px solid aliceblue;
+  border-radius: 5px;
+  padding: 10px;
+  margin-inline: 20px;
+  outline: none;
+}
+/* Confirm Before Deletin account Modal css ends here*/
+
+/* confirm before deleting msg modal css starts here*/
+
+.modal-parent-confirmation-before-deleting-msg {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200vh;
+  background-color: transparent;
+  display: none;  
+  z-index: 2;
+}
+
+.modal-confirmation-before-deleting-msg {
+position: absolute;
+top: 5%;
+margin-left: 10%;
+margin-right: 10%;
+padding: 10px;
+height: auto;
+overflow: hidden;
+border: 5px solid aliceblue;
+border-radius: 10px;
+/*background-color: transparent; */
+background-image: url('../images/guitar-2897355__480.webp');
+background-size: cover; 
+color: aliceblue; 
+text-align: center;
+position: relative;
+animation: 1s drop;
+display: block;
+}
+
+@keyframes drop {
+0% {
+ top: -200px;
+}
+100% {
+ top: 5%;
+}
+}
+
+.X-confirmation-before-deleting-msg {
+position: absolute;
+top: 7px;
+right: 10px;
+font-size: 25px;
+
+}
+.X-confirmation-before-deleting-msg:hover {
+cursor: pointer;
+
+}
+
+.modal-confirmation-before-deleting-msg a {
+  background-color: transparent;
+  color: red;
+  border: 3px solid red;
+  border-radius: 5px;
+  padding: 10px;
+  margin-inline: 20px;
+  outline: none;
+  text-decoration: none;
+}
+.modal-confirmation-before-deleting-msg button {
+  background-color: transparent;
+  color: aliceblue;
+  border: 3px solid aliceblue;
+  border-radius: 5px;
+  padding: 10px;
+  margin-inline: 20px;
+  outline: none;
+}
+/* Confirm Before Deleting msg Modal css ends here
+/* Send Message Modal css starts here*/
+.modal-parent-send-message {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200vh;
+  background-color: transparent;
+  display: none;  
+}
+
+.modal-send-message {
+position: absolute;
+top: 5%;
+margin-left: 10%;
+margin-right: 10%;
+padding: 15px;
+height: auto;
+overflow: hidden;
+border: 5px solid aliceblue;
+border-radius: 10px;
+/*background-color: transparent; */
+background-image: url('../images/guitar-2897355__480.webp');
+background-size: cover; 
+color: aliceblue; 
+position: relative;
+animation: 1s drop;
+display: block;
+}
+
+@keyframes drop {
+0% {
+ top: -200px;
+}
+100% {
+ top: 5%;
+}
+}
+
+.X-send-message {
+position: absolute;
+top: 7px;
+right: 10px;
+font-size: 25px;
+
+}
+.X-send-message:hover {
+cursor: pointer;
+
+}
+
+.modal-parent-send-message .modal-send-message form input {
+width: 100%;
+border: 3px solid aliceblue;
+border-radius: 10px;
+outline: none;
+padding: 10px;
+background-color: transparent; 
+color: aliceblue;
+}
+.modal-parent-send-message .modal-send-message form textarea {
+  max-width: 100%;
+  height: auto;
+  border: 3px solid aliceblue;
+  border-radius: 10px;
+  outline: none;
+  padding: 10px;
+  background-color: transparent; 
+  color: aliceblue;
+  overflow: auto;
+  }
+
+.modal-parent-send-message .modal-send-message form button {
+width: 20%;
+border: 3px solid aliceblue;
+border-radius: 10px;
+outline: none;
+padding: 10px;
+background-color: transparent; 
+color: aliceblue;
+margin-right: 20px;
+} 
+.modal-parent-send-message .modal-send-message form a {
+text-decoration: none;
+font-size: 18px;
+padding: 10px;
+margin-right: 20px;
+}
+/* Send Message Modal css ends here
+
+/* Reply Modal css starts here*/
+.modal-parent-reply {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200vh;
+  background-color: transparent;
+  display: none;
+  z-index: 2;  
+}
+
+.modal-reply {
+position: absolute;
+top: 5%;
+margin-left: 10%;
+margin-right: 10%;
+padding: 15px;
+height: auto;
+overflow: hidden;
+border: 5px solid aliceblue;
+border-radius: 10px;
+/*background-color: transparent; */
+background-image: url('../images/guitar-2897355__480.webp');
+background-size: cover; 
+color: aliceblue; 
+position: relative;
+animation: 1s drop;
+display: block;
+}
+
+@keyframes drop {
+0% {
+ top: -200px;
+}
+100% {
+ top: 5%;
+}
+}
+
+.X-reply {
+position: absolute;
+top: 7px;
+right: 10px;
+font-size: 25px;
+
+}
+.X-reply:hover {
+cursor: pointer;
+
+}
+
+.modal-parent-reply .modal-reply form input {
+width: 100%;
+border: 3px solid aliceblue;
+border-radius: 10px;
+outline: none;
+padding: 10px;
+background-color: transparent; 
+color: aliceblue;
+}
+
+.modal-parent-reply .modal-reply form textarea {
+  max-width: 100%;
+  height: auto;
+  border: 3px solid aliceblue;
+  border-radius: 10px;
+  outline: none;
+  padding: 10px;
+  background-color: transparent; 
+  color: aliceblue;
+  overflow: auto;
+  }
+
+.modal-parent-reply .modal-reply form button {
+width: 20%;
+border: 3px solid aliceblue;
+border-radius: 10px;
+outline: none;
+padding: 10px;
+background-color: transparent; 
+color: aliceblue;
+margin-right: 20px;
+} 
+.modal-parent-reply .modal-reply form a {
+text-decoration: none;
+font-size: 18px;
+padding: 10px;
+margin-right: 20px;
+}
+/* Reply Modal css ends here
+
+/* Forward Msg Modal css starts here*/
+.modal-parent-forward-msg {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200vh;
+  background-color: transparent;
+  display: none; 
+  z-index: 2; 
+}
+
+.modal-forward-msg {
+position: absolute;
+top: 5%;
+margin-left: 10%;
+margin-right: 10%;
+padding: 15px;
+height: auto;
+overflow: hidden;
+border: 5px solid aliceblue;
+border-radius: 10px;
+/*background-color: transparent; */
+background-image: url('../images/guitar-2897355__480.webp');
+background-size: cover; 
+color: aliceblue; 
+position: relative;
+animation: 1s drop;
+display: block;
+}
+
+@keyframes drop {
+0% {
+ top: -200px;
+}
+100% {
+ top: 5%;
+}
+}
+
+.X-forward-msg {
+position: absolute;
+top: 7px;
+right: 10px;
+font-size: 25px;
+
+}
+.X-forward-msg:hover {
+cursor: pointer;
+
+}
+
+.modal-parent-forward-msg .modal-forward-msg form input {
+width: 100%;
+border: 3px solid aliceblue;
+border-radius: 10px;
+outline: none;
+padding: 10px;
+background-color: transparent; 
+color: aliceblue;
+}
+
+.modal-parent-forward-msg .modal-forward-msg form textarea {
+  max-width: 100%;
+  height: auto;
+  border: 3px solid aliceblue;
+  border-radius: 10px;
+  outline: none;
+  padding: 10px;
+  background-color: transparent; 
+  color: aliceblue;
+  overflow: auto;
+  }
+
+.modal-parent-forward-msg .modal-forward-msg form button {
+width: 20%;
+border: 3px solid aliceblue;
+border-radius: 10px;
+outline: none;
+padding: 10px;
+background-color: transparent; 
+color: aliceblue;
+margin-right: 20px;
+} 
+.modal-parent-forward-msg .modal-forward-msg form a {
+text-decoration: none;
+font-size: 18px;
+padding: 10px;
+margin-right: 20px;
+}
+/* Forward Msg Modal css ends here
+
+/* View customer profile css starts here */
+.modal-parent-view-customer-profile {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200vh;
+  background-color: transparent;
+  display: none; 
+  z-index: 2; 
+}
+
+.modal-view-customer-profile {
+position: absolute;
+top: 5%;
+margin-left: 10%;
+margin-right: 10%;
+padding: 10px;
+height: auto;
+overflow: hidden;
+border: 5px solid aliceblue;
+border-radius: 10px;
+/*background-color: transparent; */
+background-image: url('../images/guitar-2897355__480.webp');
+background-size: cover; 
+color: aliceblue; 
+position: relative;
+animation: 1s drop;
+display: block;
+}
+
+@keyframes drop {
+0% {
+ top: -200px;
+}
+100% {
+ top: 5%;
+}
+}
+
+.X-view-customer-profile {
+position: absolute;
+top: 7px;
+right: 10px;
+font-size: 25px;
+
+}
+.X-view-customer-profile:hover {
+cursor: pointer;
+
+}
+.modal-view-customer-profile ul {
+  margin: 20px 20px 20px 100px;
+}
+.modal-view-customer-profile ul li {
+  list-style-type: none;
+  font-size: 18px;
+}
+.modal-view-customer-profile a {
+  text-decoration: none;
+  font-size: 18px;
+  margin-left: 100px;
+}
+/* View customer profile css ends here */
+
+/* View admin profile css starts here */
+.modal-parent-view-admin-profile {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200vh;
+  background-color: transparent;
+  display: none; 
+  z-index: 2; 
+}
+
+.modal-view-admin-profile {
+position: absolute;
+top: 5%;
+margin-left: 10%;
+margin-right: 10%;
+padding: 10px;
+height: auto;
+overflow: hidden;
+border: 5px solid aliceblue;
+border-radius: 10px;
+/*background-color: transparent; */
+background-image: url('../images/guitar-2897355__480.webp');
+background-size: cover; 
+color: aliceblue; 
+position: relative;
+animation: 1s drop;
+display: block;
+}
+
+@keyframes drop {
+0% {
+ top: -200px;
+}
+100% {
+ top: 5%;
+}
+}
+
+.X-view-admin-profile {
+position: absolute;
+top: 7px;
+right: 10px;
+font-size: 25px;
+
+}
+.X-view-admin-profile:hover {
+cursor: pointer;
+
+}
+.modal-view-admin-profile ul {
+  margin: 20px 20px 20px 100px;
+}
+.modal-view-admin-profile ul li {
+  list-style-type: none;
+  font-size: 18px;
+}
+.modal-view-admin-profile a {
+  text-decoration: none;
+  font-size: 18px;
+  margin-left: 100px;
+}
+/* View admin profile css ends here */
+/* templates css starts */
+.templates {
+  width: 100%;
+  height: auto;
+  padding-top: 60px;
+  /*margin-top: 60px;*/  
+  background-color: transparent; 
+  text-align: center;
+  color: aliceblue;  
+
+}
+.templates p {
+  font-size: 20px;
+}
+.templates button {
+  width: 100%;
+  background-color:transparent;
+  border: 5px solid aliceblue;
+  border-radius: 10px;
+  outline: none;
+  font-size: 17px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* templates css ends */
+
+/* admin css starts */
+.admin {
+  width: 100%;
+  height: 100vh;
+  padding-top: 70px;
+  /*margin-top: 60px;*/  
+  background-color: transparent; 
+  text-align: center;
+  color: aliceblue; 
+}
+
+.admin button {
+  background-color: transparent;
+  border: 3px solid aliceblue;
+  border-radius: 7px;
+  outline: none;
+  font-size: 20px;
+  padding: 8px;
+  margin-top: 50px;
+  color: aliceblue;
+}
+@media screen and (max-width: 335px) {
+  .admin h1,  .admin button {
+    font-size: .99rem;
+  }
+}
+@media screen and (max-width: 250px) {
+  .admin button {
+    font-size: .90rem;
+    margin: 50px 2px 50px 4px;
+  }
+}
+#send-message {
+  background-color: transparent;
+  border: 3px solid aliceblue;
+  border-radius: 10px;
+  outline: none;
+  font-size: 20px;
+  padding: 10px;
+}
+
+/* admin css ends */
+
+/* Sign out css*/
+
+.signout {
+  background-color: transparent;
+  width: 100%;
+  height: auto;
+  padding-top: 50px;
+  margin-top: 60px;
+  text-align: center;
+  color: aliceblue;
+}
+.signup-verification {
+  width: 100%;
+  height: auto;
+  padding: 100px;
+}
+.signup-verification form {
+  text-align: left;
+  padding-left: 25%;
+}
+.signup-verification form label {  
+  font-size: 20px;
+}
+
+.signup-verification form input{  
+  border: 3px solid aliceblue;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 10px;
+  background-color: transparent;
+  outline: none;
+}
+
+
+/* Forgot password css*/
+.forgot-password {
+  width: 100%;
+  height: auto;
+  padding: 100px;
+}
+.forgot-password form {
+  text-align: left;
+  padding-left: 25%;
+}
+.forgot-password form label {  
+  font-size: 20px;
+}
+
+.forgot-password form input{  
+  border: 3px solid aliceblue;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 10px;
+  background-color: transparent;
+  outline: none;
+}
+.admin-gallery  {
+  width: 100%;
+  height: 100vh;
+  padding-top: 60px;
+  /*margin-top: 60px;*/  
+  background-color: transparent; 
+  text-align: center;
+  color: aliceblue; 
+}
+.admin-gallery form {
+  text-align: center;
+}
+.admin-gallery form input {
+  width: 100%;
+  background-color: transparent;
+  border: 3px solid aliceblue;
+  border-radius: 7px;
+  outline: none;
+  font-size: 20px;
+  padding: 10px;
+  
+}
+.admin-gallery form button{
+  
+  background-color: transparent;
+  border: 3px solid aliceblue;
+  border-radius: 7px;
+  outline: none;
+  font-size: 20px;
+  padding: 10px;
+ }
+.dashboardadmin {
+  width: 100%;
+  height: 100vh;
+  padding-top: 60px;
+  /*margin-top: 60px;*/  
+  background-color: transparent; 
+  text-align: center;
+  color: aliceblue; 
+}
+.sidenav-dashboardadmin {
+  display: block;
+  float: left;
+  width: 250px;
+  height: 100%;
+  background-color: transparent;
+  border-right: 5px solid aliceblue;
+  padding: 80px 10px 20px 20px;
+}
+.sidenav-dashboardadmin ul li {
+  list-style: none;
+}
+
+.sidenav-dashboardadmin ul li a {
+  color: aliceblue;
+  text-decoration: none;
+  font-size: 20px;
+
+}
+.sidenav-dashboardadmin ul li a:hover {
+  color:  rgb(90, 89, 89);
+  
+}
+.dashboardadmin .profile-details {
+  width: 70%;
+  float: right;
+  height: auto;
+  border: 1px solid aliceblue;
+  padding: 20px;
+  margin: 20px;  
+  text-align: left;
+}
+.dashboardadmin .profile-details .row {
+  display: flex;
+}
+.dashboardadmin .profile-details .row .column {
+  width: 50%;
+  border: .5px solid aliceblue;
+  padding: 10px;
+}
+.dashboardadmin .profile-details .row .column ul li {
+  list-style: none;
+  font-size: 18px;
+  padding: 10px;
+}
+.adminstafflist {
+  width: 75%;
+  height: 100vh;
+  float: right;
+  padding-top: 60px;
+  /*margin-top: 60px;*/  
+  background-color: transparent; 
+  text-align: center;
+  color: aliceblue; 
+  border: 1px solid aliceblue;
+}
+
+.adminstafflist ul li {
+  list-style: none;
+  text-align: left;
+  
+
+}
+.adminstafflist ul li a {
+  text-decoration: none;
+  font-size: 16px; 
+  padding: 10px;
+  color: aliceblue;
+}
+.adminstafflist ul li a:hover {
+  color: rgb(105, 105, 214);
+}
+.make-notes {
+  width: 70%;
+  height: auto;
+  float: right;
+  padding: 10px;
+  margin: 10px;
+  border: 3px solid aliceblue;
+ 
+}
+fieldset {
+  margin-bottom: 20px;
+}
+/* Get Started*/
+.getstarted {
+  width: 100%;
+  height: 100vh;
+  padding-top: 60px;
+  /*margin-top: 60px;*/  
+  background-image: url('../images/children-593313__480.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  color: aliceblue; 
+}
+.getstarted-1 {
+  width: 99%;
+  height: 100vh;
+  padding: 10px;
+  
+}
+.getstarted-1 .row {
+  display: flex;
+
+}
+.getstarted-1 .row .column {
+  width: 50%;
+  padding: 20px;
+  color: aliceblue;
+}
+.getstarted-1 .row .col-right h2 a {
+  text-decoration: none;
+  
+}
+/* Freelancers list*/
+.freelancerslist {
+  width: 100%;
+  height: 100vh;
+  padding-top: 60px;
+  /*margin-top: 60px;*/  
+  background-image: url('../images/children-593313__480.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  color: aliceblue; 
+}
+.freelancer-1-container .row {
+  display: flex;
+  width: 100%;
+  height: auto;
+}
+.freelancer-1-container .row .column {
+  width: 25%;
+  padding: 15px;
+  color: aliceblue;  
+  font-size: 20px;
+  /*border: 1px solid aliceblue;*/
+}
+.freelancer-1-container .row .column a {
+  text-decoration: none;
+  text-align: left;
+}
+
+/* All advertisements css starts here*/
+
+
+.alladvertisements-1-container .row, .viewalladvertisements {
+  display: flex;
+  width: 100%;
+  height: auto;
+  
+}
+.alladvertisements-1-container .row .column {
+  width: 25%;
+  height: auto;
+  padding: 15px;
+  color: aliceblue;  
+  font-size: 20px;
+  /*border: 1px solid aliceblue;*/
+}
+.alladvertisements-1-container .row .column a {
+  text-decoration: none;
+  text-align: left;
+}
+
+.viewalladvertisements {
+  width: 100%;
+  height: auto;
+  padding-top: 10px;
+  /*margin-top: 60px;*/  
+  background-color: brown; 
+  color: aliceblue; 
+  /*border: 1px solid aliceblue;*/
+}
+.viewalladvertisements table {
+  width: 100%;
+  height: auto;
+}
+.viewalladvertisements table tr {
+  text-align: left;
+  font-size: 18px;
+  padding: 15px;
+}
+.viewalladvertisements table tr td button {
+  background-color: transparent;
+  border: 3px solid aliceblue;
+  outline: none;
+  border-radius: 5px;
+  padding: 10px;
+}
+/*
+.viewalladvertisements table tr form textarea {
+  background-color: transparent;
+  width: 100%;
+  height: auto;
+}
+*/
+.viewalladvertisements table tr form button {
+  background-color: transparent;
+  border: 3px solid aliceblue;
+  color: aliceblue;
+  padding: 10px;
+  border-radius: 5px;
+}
+/* all advertisements css ends here */
+
+/* templates css starts */
+.dashboardcart {
+  width: 100%;
+  height: auto;
+  padding-top: 60px;
+  /*margin-top: 60px;*/  
+  background-color: transparent; 
+  text-align: center;
+  color: aliceblue;  
+
+}
+.dashboardcart table {
+  width: 100%;
+  height: auto;
+  border: 2px solid aliceblue;
+  
+}
+.dashboardcart table tr {
+  width: 100%;
+  height: auto; 
+  
+}
+
+.dashboardcart table tr th {
+  width: 15%;
+  height: auto;
+  padding: 10px;
+  text-align: left;
+  border: 1px solid aliceblue;
+  
+}
+.dashboardcart table tr td {
+  width: 15%;
+  height: auto;
+  padding: 10px;
+  text-align: left;
+  border: 1px solid aliceblue;
+}
+
+.dashboardcart .cartitem-button {
+  width: 1005;
+  background-color:transparent;
+  border: 2px solid aliceblue;
+  border-radius: 10px;
+  outline: none;
+  font-size: 14px;
+  padding: 10px;
+  margin-left: 20%;
+}
+#payBtn {
+  width: 100%;
+  background-color:transparent;
+  border: 5px solid aliceblue;
+  border-radius: 10px;
+  outline: none;
+  font-size: 17px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+/* templates css ends */
+/* inbox css strts*/
+.inbox {
+  width: 100%;
+  height: auto;
+  padding-top: 60px;
+  /*margin-top: 60px;*/  
+  background-color: transparent; 
+  text-align: center;
+  color: aliceblue; 
+  
+}
+.inbox .inbox-msg-box {
+  height: auto;
+  margin: 10px 10px 10px 260px;
+  padding: 15px;
+  border: 3px solid aliceblue;
+  border-radius: 5px;
+  /*margin-top: 60px;*/  
+  background-color: transparent; 
+  text-align: left;
+  color: aliceblue; 
+  overflow: auto;
+  position: relative;
+}
+.inbox .inbox-msg-box ul {
+  height: auto;
+  padding: 10px;
+  margin: 10px;
+}
+.inbox .inbox-msg-box ul li {
+  list-style: none;
+  text-align: left;
+  /*margin-left: 300px;*/
+  font-size: 18px;
+}
+.inbox .inbox-msg-box ul li a {
+  text-decoration: none;
+}
+.inbox .inbox-msg-box ul li a:not(:first-child) {
+  background-color: transparent;
+  color: aliceblue;
+  border: 3px solid aliceblue;
+  border-radius: 5px;
+  padding: 7px;
+  margin-left: 7px;
+  margin-right: 7px;
+}
+
+/* inbox css ends*/
+
+/* Create Profile css starts
+/* inbox css strts*/
+.createprofile {
+  width: 100%;
+  height: auto;
+  padding-top: 60px;
+  /*margin-top: 60px;*/  
+  background-color: transparent; 
+  text-align: center;
+  color: aliceblue;   
+}
+.createprofile button {
+  background-color: transparent;
+  border: 3px solid aliceblue;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 20px;
+  outline: none;
+}
+/* Create Profile css ends
+
+
+/* Wedding Invitation template demo css starts here*/
+
+
+/* rsvp modal css starts here */
+
+.modal-parent-rsvp {
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: transparent;
+  display: none;
+  
+}
+
+.modal-rsvp {
+position: absolute;
+top: 10%;
+margin-left: 10%;
+margin-right: 10%;
+padding: 15px;
+height: auto;
+z-index: 1;
+overflow: hidden;
+border: 5px solid brown;
+border-radius: 10px;
+background-image: url('/images/gettyimages-1282823030-612x612.jpg'); 
+background-size: cover;
+color: aliceblue; 
+position: relative;
+animation: 1s drop;
+display: block;
+
+}
+.modal-parent-rsvp .modal-rsvp h1{
+  text-align: center;
+}
+
+@keyframes drop {
+0% {
+ top: -200px;
+}
+100% {
+ top: 10%;
+}
+}
+@media(max-width: 1300px) {
+  @keyframes drop {
+      0% {
+          top: -200px;
+         }
+         100% {
+          top: 5%;
+         }
+  }
+}
+@media(max-width: 700px) {
+  @keyframes drop {
+      0% {
+          top: -200px;
+         }
+         100% {
+          top: 5%;
+         }
+  }
+}
+
+
+/* rsvp modal css ends here */
+/* Wedding Invitation template demo css ends here*/
+.admin-signup-container {
+  width: auto;
+  height: auto;
+  padding: 10px;
+  
+  
+  margin-left: 260px;
+  overflow: hidden;
+}
+
+.admin-signup-container .row-1 {
+  width: inherit;
+  height: inherit;
+  margin-bottom: 20px;
+  border: 2px solid aliceblue;
+  border-radius: 5px;
+  text-align: left;
+  padding: 15px;
+}
+
+.admin-signup-container .row-2 {
+  width: inherit;
+  height: inherit;
+  margin-bottom: 20px;
+  border: 2px solid aliceblue;
+  border-radius: 5px;
+  text-align: left;
+  padding: 15px;
+}
+.admin-signup-container .row label {
+   font-size: 18px;
+}
+.admin-signup-container .row input{
+  font-size: 18px;
+  padding: 5px;
+  background-color: transparent;
+  border: 3px solid aliceblue;
+  border-radius: 5px;
+  color: aliceblue;
+}
+
+/* upload file container*/
+ .upload-file-container {
+  width: 65%;
+  height: auto;
+  margin: 10px 50px 10px 260px;
+  padding: 0;
+  border: 3px solid aliceblue;
+  border-radius: 5px;
+  /*margin-top: 60px;*/  
+  background-color: transparent; 
+  text-align: left;
+  color: aliceblue; 
+  overflow: hidden;
+  /*position: relative;*/
+}
+
+.upload-file-container form {
+  margin: 10px;
+}
+
+.upload-file-container form label {
+  margin: 10px;
+  font-size: 18px;
+  color: aliceblue;
+}
+
+.upload-file-container form input {
+  background-color: transparent;
+  border: 3px solid aliceblue;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10PX;
+  font-size: 18px;
+  outline: none;
+}
+
+.upload-file-container form button {
+  background-color: transparent;
+  border: 3px solid aliceblue;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10PX;
+  font-size: 18px;
+  outline: none;
+}
+
+.upload-file-container form textarea {
+  border: 3px solid aliceblue;
+  border-radius: 5px;
+  outline: none;
+  max-width: 60%;
+  background-color: transparent;
+  color: aliceblue;
+  overflow: auto;
+  padding: 10px;
+  margin: 10px;
+}
+
+.recyclebin h3 {
+  text-align: left;
+  margin-left: 270px;
+}
+
+.recyclebin h3 ul {
+  text-align: left;
+  
+}
+
+.recyclebin h3 ul li {
+  list-style: none;
+  
+}
+.img-gallery {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+}
+.box {
+  background-color: transparent;
+  padding: 50px;
+  margin: 10px;
+
+}
+.box > img {
+  width: 100%;
+}
+.img-gallery img {
+  transition: all, 1s;
+}
+.img-gallery img:hover {
+  transform: scale(1.1);
+  cursor: pointer;
 }
