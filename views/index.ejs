@@ -1,11 +1,45 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
+<%- include('header')  %> 
+
+      <div class="item item3 main">
+        <div class="container welcome" id="homecontent"> 
+        <% if(msg != '') {%> 
+         <h1 style="color: lightgreen"> <%= msg %> </h1>  
+        <% } %> 
+                
+        <h1>Home</h1>
+        <h2>Learn Music || Record song</h2>         
+         <div class="row">           
+          <div class="column column-left">
+            <h3><a href="/musicclasses" style="text-decoration: none;">Music Classes</a></h3>
+            <h3><a href="/audiorecordyoursong" style="text-decoration: none;">Audio Record Your Song</a></h3>
+         </div>
+          <div class="column column-right">
+            <h3><a href="/videoshootyoursong" style="text-decoration: none;">Video Shoot Your Song</a></h3>
+            <h3><a href="/bookliveconcert" style="text-decoration: none;">Book Live Concert Now</a></h3>
+          </div>
+         </div>         
+               
+        </div> 
+        
+        <!-- About Content Stats here-->
+        <div class="about" id="aboutcontent">
+          <h1>About</h1>
+          <p>
+            We are <strong><i>GMP Studio</i></strong> as well as <strong><i>SaReGaMa Music Academy.</i></strong>  We Produce Music and record songs at GMP Studio Yamuna Nagar. We teach Music at SaReGaMa Music Academy Yamuna Nagar. Please Scroll down to know more about our work.  
+          </p>
+          <p>Cheers :)</p>
+        </div>
+        <!-- About Content ends here-->
+
+        <!-- why us Content Stats here-->
+        <div class="whyus" id="whyuscontent">
+          <h1>Why Us</h1>
+          <p>Because, we believe in <strong><i>Quality</i></strong> over Quantity.</p>
+          <p>Because, we are <strong><i>one of the best.</i></strong> </p>
+          <p>Because, we have a <strong><i>Musical Background.</i></strong> </p>
+          <p>Because, Music is our <strong><i>full time profession.</i></strong> </p> 
+          <p>Because, We are <strong><i>experienced in our profession.</i></strong> </p>         
+        </div>      
+      <br/>
+      <%- include('modal') %> 
+<%- include('footer') %> 

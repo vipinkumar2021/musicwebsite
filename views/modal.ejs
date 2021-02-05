@@ -1,0 +1,238 @@
+
+        <!--Sign in Modal starts here-->
+        <div class="modal-parent-signin" id="signin">
+            <div class="modal-signin">
+                <h1 style="text-align: center;">Log in</h1>      
+                <form action="/signin" method="post" role="form">
+                  <label for="username">Username</label><br/>
+                  <input name="uname" type="username" placeholder="Enter Your Username..." required/><br/><br/>
+                  <label for="password">Password</label><br/>
+                  <input name="password" type="password" placeholder="Enter Your Password..." required/><br/><br/>                            
+                  <button type="submit">Log in</button><button type="reset">Reset</button><button onclick="closeSigninModal()">cancel</button><br/><br/>
+                  <a href="/forgotusername">Forgot Username</a> 
+                  <a href="/forgotpassword">Forgot Password</a> 
+                                
+                  <a href="#" onclick="openSignUpModal()">Register</a>
+                </form>
+                <span class="X-signin">&times;</span>
+            </div>
+          </div>
+          <!--Sign in Modal ends here-->
+        
+              <!--Sign up Customer Modal starts here-->
+          <div class="modal-parent-signup">
+            <div class="modal-signup">
+                <h1 style="text-align: center;">Customer Registration</h1>        
+                <form action="/signupcustomer" method="post" role="form" >
+                  <label for="firstname">First Name</label><br/>
+                  <input name="firstname" type="text" placeholder="Enter Your First Name..." required /><br/><br/>
+                  <label for="lastname">Last Name</label><br/>
+                  <input name="lastname" type="text" placeholder="Enter Your Last Name..." required /><br/><br/>
+                  <label for="usrname">Username</label><br/>
+                  <input name="usrname" type="username" placeholder="Create a Username..." required /><br/><br/>
+                  <label for="mobilenumber">Mobile Number</label><br/>
+                  <input name="mobilenumber" type="tel" placeholder="Enter Your Mobile Number..." required /><br/><br/>
+                  <label for="email">Email</label><br/>
+                  <input name="email" type="email" placeholder="Enter Your Email id..." required /><br/><br/>
+                  <button type="submit">Proceed to Sign up</button><button type="reset">Reset</button><button onclick="closeSignupModal()">cancel</button><br/><br/>
+                  
+                  <a href="#" onclick="openSignInModal()">Log in</a>
+                </form>
+                <span class="X-signup" onclick="closeSignupModal()">&times;</span>
+            </div>
+          </div>
+          <!--Sign up Customer Modal ends here-->
+        
+              <!--Give Your Details Modal starts here-->
+              <div class="modal-parent-giveyourdetails">
+                <div class="modal-giveyourdetails">
+                    <h1>If Already a registered customer, then click <a href="#" onclick="openSignInModal()">here</a></h1>
+                    <h1 style="text-align: center;">If not a previous customer, Please Give Your Details and Sign up First</h1>
+                    <form action="/signupcustomer" method="post" role="form" >
+                      <label for="firstname">First Name</label><br/>
+                      <input name="firstname" type="text" placeholder="Enter Your First Name..." /><br/><br/>
+                      <label for="lastname">Last Name</label><br/>
+                      <input name="lastname" type="text" placeholder="Enter Your Last Name..." /><br/><br/>
+                      <label for="usrname">Username</label><br/>
+                      <input name="usrname" type="username" placeholder="Create a Username..."  /><br/><br/>
+                      <label for="mobilenumber">Mobile Number</label><br/>
+                      <input name="mobilenumber" type="tel" placeholder="Enter Your Mobile Number..." /><br/><br/>
+                      <label for="email">Email</label><br/>
+                      <input name="email" type="email" placeholder="Enter Your Email id..." /><br/><br/>
+                      <label for="nationalid">National Id</label><br/>
+                      <input name="nationalid" type="nationalid" placeholder="Enter Your National id..." /><br/><br/>
+        
+                      <button type="submit">Proceed to Sign up</button><button type="reset">Reset</button><button onclick="closeGiveYourDetailsModal()">cancel</button><br/><br/>
+                               
+                    </form>
+                    <span class="X-giveyourdetails" onclick="closeGiveYourDetailsModal()">&times;</span>
+                </div>
+              </div>
+              <!--Give Your Details Modal ends here-->
+                      <!--Website Feature List Modal starts here-->
+          <div class="modal-parent-websitefeatureslist" id="signin">
+            <div class="modal-websitefeatureslist">
+                <h1 style="text-align: center;">Website Feature List</h1>
+                <h1>Choose features for your website</h1>
+                <form action="/dashboardgetstarted/selectwebsitefeatures" method="post" role="form">
+                  <input name="usersignupsignin" type="checkbox" value="User Sign Up and Sign In (Rs.  5999)" /><label for="">User Sign up and Sign in Services</label><br/>
+                  <input name="employeesignupsignin" type="checkbox" value="Employees Sign Up and Sign In (Rs.  5999)"/><label>Employees Sign up and Sign in Services</label><br/>
+                  <input class="this-item-price" name="adminsignupsignin" type="checkbox" value="Admin Sign Up and Sign In (Rs. 5999)"/><label>Admin Sign up and Sign in Services</label><br/>
+                  <input class="this-item-price" name="companylogo" type="checkbox" value="Company Logo (Rs.  4999)"/><label>Company Logo (Don't select if you already have a Company Logo)</label><br/>
+                  <input class="this-item-price" name="contentmanagement" type="checkbox" value="Content Management (Rs.   7999)" /><label>Content Management System</label><br/>
+                  <input class="this-item-price" name="documentmanagement" type="checkbox" value="Document Management (Rs.  7999)"/><label>Document Management System</label><br/>
+                  <input class="this-item-price" name="eventcalender" type="checkbox" value="Event Calender (Rs.  4999)"/><label>Event Calender</label><br/>
+                  <input class="this-item-price" name="emailnewslettersubscription" type="checkbox" value="Email Newsletter Subscription (Rs.  3999)"/><label>Email Newsletter/Member Subscription</label><br/>
+                  <input class="this-item-price" name="businessdirectory" type="checkbox" value="Business Directory (Rs.  5999)"/><label>Business Directory/Listings</label><br/>
+                  <input class="this-item-price" name="onlinepayment" type="checkbox" value="Online payment Method (Rs.  14999)"/><label>Online Payment Method</label><br/>         
+                  <input class="this-item-price" name="socialmedia" type="checkbox" value="Social Media Integration (Rs.  2999)"/><label>Social Media Integration</label><br/>
+                  <input id="websitefeaturestotalprice" type="hidden" name="websitefeaturestotalprice" value="Total Price for selected Features: " />
+                  <button type="submit">Submit</button><button type="reset">Reset</button>
+                </form>
+                <span class="X-websitefeatureslist" onclick="closeWebsiteFeaturesListModal()">&times;</span>
+            </div>
+          </div>
+          <!--Website Features List Modal ends here-->
+        
+                               
+        
+          <!--Website Content Modal starts here-->
+                  
+          <div class="modal-parent-website-content">
+            <div class="modal-website-content">
+              <h1 style="text-align: center;">Website Content is the data and information to be added in your website</h1>
+                <h1 style="text-align: center;">Add Website Content</h1>
+                <form action="/dashboardgetstarted//providewebsitecontent" method="post" role="form">
+                  <label for="companyname">Comapay Name OR Your Name (Name to be shown on website)</label><br/>
+                  <input name="companyname" type="text" placeholder="Enter Your Company Name..." required/><br/><br/>
+                  <label for="contactnumber">Contact Number to be shown on website</label><br/>
+                  <input name="contactnumber" type="tel" placeholder="Enter Your Mobile Number..." required/><br/><br/>
+                  <label for="email">Official Email Id to be shown on website</label><br/>
+                  <input name="email" type="email" placeholder="Enter Your Email id..." /><br/><br/>
+                  <label for="companyaddress">Adress to be shown on website</label><br/>
+                  <textarea name="companyaddress" type="text" placeholder="Enter Your Message here...">
+        
+                  </textarea><br/><br/>
+                  <label for="companyservices">Describe Company Services to be shown on website (Full Details recommended)</label><br/>
+                  <textarea name="companyservices" type="text" placeholder="Enter Your Message here...">
+        
+                  </textarea><br/><br/>
+                  <label for="additionalinformation">Any Additional Information to be shown in your website</label><br/>
+                  <textarea name="additionalinformation" type="text" placeholder="Enter Your Message here...">
+        
+                  </textarea><br/><br/>
+                  <label for="companylogofile">Upload Company Logo to be shown on website (if Any)</label><br/>
+                  <input name="companylogofile" type="file"/><br/>
+                  <label for="fileupload">Upload Files to be shown on website</label><br/>
+                  <input name="fileupload" type="file"/><br/>
+                  <label for="photo upload">Upload Photos to be shown on website</label><br/>
+                  <input name="photoupload" type="file"/><br/>
+        
+                  <button type="submit">Submit Website Content</button><button onclick="closeWebsiteContentModal()">cancel</button><br/><br/>
+                  
+                  </form>
+                  
+                <span class="X-website-content" onclick="closeWebsiteContentModal()">&times;</span>
+            </div>
+          </div>
+          <!--wEBSITE content Modal ends here-->
+          
+                    <!--Agreement Modal starts here-->
+          <div class="modal-parent-agreement" id="signin">
+            <div class="modal-agreement">
+                <h1 style="text-align: center;">Agreement</h1>
+                <h1>Agreement will be written below</h1>
+                
+                <button>Accept</button><button onclick="closeAgreementModal()">Reject</button>
+                <span class="X-agreement" onclick="closeAgreementModal()">&times;</span>
+            </div>
+          </div>
+          <!--Agreement Modal ends here-->
+          
+                  <!--Contact Us Modal starts here-->
+                  
+                  <div class="modal-parent-contact">
+                    <div class="modal-contact">
+                        <h1 style="text-align: center;">Contact Us</h1>
+                        <form action="/contactus" method="post" role="form">
+                          <label for="firstname">First Name</label><br/>
+                          <input name="firstname" type="text" placeholder="Enter Your First Name..." required/><br/><br/>
+                          <label for="lastname">Last Name</label><br/>
+                          <input name="lastname" type="text" placeholder="Enter Your Last Name..." required/><br/><br/>
+                          <label for="mobilenumber">Mobile Number</label><br/>
+                          <input name="mobilenumber" type="tel" placeholder="Enter Your Mobile Number..." required/><br/><br/>
+                          <label for="email">Email</label><br/>
+                          <input name="email" type="email" placeholder="Enter Your Email id..." optional/><br/><br/>
+                          <label>Write Message</label><br/>
+                          <textarea name="writeusmessage" type="text" placeholder="Enter Your Message here...">
+          
+                          </textarea><br/><br/>
+                          <button type="submit">Submit Message</button><button onclick="closeContactModal()">cancel</button><br/><br/>
+                          
+                          <span>Toll Free:<a href="tel: +919813806752">0091 9813806752</a></span>                
+                        </form>
+                        <span class="X-contact" onclick="closeContactModal()">&times;</span>
+                    </div>
+                  </div>
+                  <!--Contact Modal ends here-->
+        
+                  <!-- Delete Confirmation Modal starts here-->
+                  
+                  <div class="modal-parent-confirmation-before-delete">
+                    <div class="modal-confirmation-before-delete">
+                        <h1>Are you sure, you want to delete this?</h1>
+                        <br/><br/>                
+        
+                          <a href="../delete/deleteaccount/:id" style="list-style: none;" >Yes</a><button type="button" onclick="closeConfirmBeforeDeleteModal()">No</button><br/><br/>
+                        
+                                                                         
+                        <span class="X-confirmation-before-delete" onclick="closeConfirmBeforeDeleteModal()">&times;</span>
+                    </div>
+                  </div>
+                  <!-- Delete Confirmation Modal ends here-->
+        
+                  <!--Freelance work advertisement Modal starts here-->
+                  
+          <div class="modal-parent-freelancework-advertisement">
+            <div class="modal-freelancework-advertisement">
+              <h1 style="text-align: center;">Get Started</h1>
+              <br/>
+                <form action="/dashboardfreelancerslist/freelanceworkadvertisement" method="post" role="form">
+                  <label>Select Title</label>
+                  <select name="freelanceworktitleoptions" id="">
+                    <option value="Unselected Title">Select Title</option>
+                    <option value="Web Developement">Web Development</option>
+                    <option value="Website Repairing">Website Repairing</option>
+                    <option value="Website Editing">Website Editing</option>
+                    <option value="Web Designing">Web Design</option>
+                    <option value="Photography">Photography</option>
+                    <option value="Music Production">Music Production</option>
+                    <option value="Writing">Writing</option>           
+                    <option value="Mobile App">Mobile App</option>
+                    <option value="Other Freelance Work">Other Freelancers</option>
+                  </select><br/><br/>
+                 <label for="description">Describe what you want</label><br/>
+                  <textarea name="description" type="text" placeholder="Enter Your Description here...">
+        
+                  </textarea><br/><br/>
+                  
+                  <label for="additionalinformation">Any Additional Information to be shown in Advertisement</label><br/>
+                  <textarea name="additionalinformation" type="text" placeholder="Enter Your Message here...">
+        
+                  </textarea><br/><br/>
+                  <label for="freelancerexperiencelevel">What level of experience your Freelancer should have?</label><br/>
+                  <input name="freelancerexperiencelevelentry" type="checkbox" value="Entry Level"/><label>Entry Level</label>
+                  <input name="freelancerexperiencelevelintermediate" type="checkbox" value="Intermediate Level"/><label>Intermediate Level</label>
+                  <input name="freelancerexperiencelevelexpert" type="checkbox" value="Expert"/><label>Expert</label><br/><br/>
+                  
+                  <label for="budget">Your Budget (in INR) for the Project?</label><br/>
+                  <input name="budget" type="number" placeholder="Enter your budget here....."/><br/><br/>
+                  <button type="submit">Advertise to Freelancers</button><button type="button" onclick="closeFreelanceWorkAdvertisementModal()">cancel</button><br/><br/>
+                   
+                  </form>
+                  
+                <span class="X-freelancework-advertisement" onclick="closeFreelanceWorkAdvertisementModal()">&times;</span>
+            </div>
+          </div>
+          <!--Freelance work advertisement Modal ends here-->
+                    
