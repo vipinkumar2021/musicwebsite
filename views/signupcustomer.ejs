@@ -1,0 +1,41 @@
+<%- include('header') %>
+
+<div class="item item3 main">
+    <div class="container admin signup-verification">
+        <h1>Sign up Verification Page</h1>
+        <br/> 
+        <h3 style="color: lightgreen;">
+          <% if(msg != ''){ %>
+            <h2 style="color: lightgreen;"><%= msg %></h2>
+          <% } %> 
+        </h3>
+        <h3>
+          <% if(adminDetails != ''){ %>
+            <h2 style="color: lightgreen;"><%= adminDetails %></h2>
+          <% } %> 
+        </h3>
+        
+        <br/>
+        <form action="/accountactivatedcustomer" method="post" role="form">
+          <label for="otp">Please Enter One Time Password (OTP) sent to your Email</label><br/>
+          <input name="otp" type="otp" placeholder="Enter OTP....."/><br/><br/>
+          <label for="password">Password</label><br/>
+          <input name="password" type="password" placeholder="Create a Password..."  /><br/><br/>
+          <label for="cnfpassword">Confirm Password</label><br/>
+          <input name="cnfpassword" type="password" placeholder="Confirm Your Password..." /><br/><br/>              
+
+          <button id="send-message" type="submit">Click here to activate your account</button> 
+        </form>
+
+        
+        
+    </div>
+ 
+
+</div>
+
+<%- include('footer') %>
+
+
+
+

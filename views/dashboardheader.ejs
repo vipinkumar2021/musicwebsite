@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="music production and music classes">
+    <meta name="keywords" content="music, Music, music class, music classes, music production, song recording, cheapest, cheapest classes, cheapest music classes, music website, free music, free song recording, guitar, vocal, tabla, harmonium, piano, music programming, vocal recording, music recording, tuition, best, top ">
+    <meta name="author" content="Tarun Gaur">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <!--Font Awesome for icons-->
+    <script src='https://kit.fontawesome.com/a076d05399.js' async></script>
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="item item1 header">
+        <span onclick="openNav()" class="iconbar">&#9776;</span><a href="#" class="brand-title"><img class="logo-img" src="../images/logogmpstudio.png" /></a>
+      
+        <div class="headernav">
+          <ul>
+           
+            <li>
+              <a href="/dashboardwebsite/#homecontent" id="home-icon">Home</a>
+            </li>
+            <li>
+              <a href="/dashboardwebsite/#aboutcontent">About</a>
+            </li>
+            <li>
+              <a href="/dashboardwebsite/#whyuscontent">Why Us</a>
+            </li> 
+            
+            
+            <li>
+              <a href="#">Services</a>
+              <ul>
+                <li><a href="/dashboardmusicproduction">Music Production</a></li>
+                <li><a href="/dashboardvocalclasses">Vocal Classes</a></li>
+                <li><a href="/dashboardguitarclasses">Guitar Classes</a></li>
+                <li><a href="/dashboardtablaclasses">Tabla Classes</a></li>
+                <li><a href="/dashboardpianoclasses">Piano Classes</a></li>
+                <li><a href="/dashboardharmoniumclasses">Harmonium Classes</a></li>
+                <li><a href="/dashboardbookliveconcert">BookLive Concert</a></li>
+                <li><a href="/dashboardaudiorecordyoursong">Audio Record Your Song</a></li>
+                <li><a href="/dashboardvideoshootyoursong">Video Shoot Your Song</a></li>                
+            </ul>
+            </li>
+            <li>
+              <a href="/dashboardgallery">Gallery</a>
+            </li> 
+            <li>
+              <a href="#" onclick="openContactModal()">Contact</a>
+            </li>                 
+            
+          </ul>
+          <ul class="dashboard-logged-in-dropdown">
+            <li>
+                <a href="/dashboardcustomer" style="color: rgb(71, 157, 255);">
+                    <i>
+                      <% if(loginUser){ %>  
+                        <%= loginUser %> 
+                      <% } %>
+                    </i> 
+                </a>
+                <ul id="dashboard-logged-in-dropdown-menu">
+                  <li><a href="/dashboardcustomer" >View Profile</a></li>
+                  <li>
+                    <a href="/dashboardcart">View Cart</a>
+                  </li>
+                  <li><a href="#" onclick="openConfirmBeforeDeleteModal()">Delete Account</a></li>
+                  <li><a href="/editaccount">Edit Account</a></li>
+                  <li>
+                    <form action="/signout" method="post" role="form">
+                      <button class="signoutBtn" type="submit"><i style="color: rgb(71, 157, 255);">Log out</i></button>
+                    </form>              
+                  </li>
+                </ul>
+            </li>
+            
+          </ul>
+        </div>
+
+      
+        
+
+      <div class="sidenav-parent">
+        <div class="sidenav">
+          <ul>
+            <li>
+              <a href="javascript:void(0)" class="closeBtn">&times;</a>
+            </li>
+            <li>
+              <a href="/dashboardwebsite/#homecontent" onclick="closeSideNav()">Home</a>
+            </li>
+            <li>
+              <a href="/dashboardcart">View Cart</a>
+            </li>
+            <li>
+                <a href="/dashboardcustomer" >
+                    Logged in As: <% if(loginUser){ %>  
+                        <%= loginUser %> 
+                        <% } %>  
+                </a>
+              </li>
+            <li>
+              <form action="/signout" method="post" role="form">
+                <button class="signoutBtn" type="submit">Log out</button>
+              </form>
+            </li>
+            
+            <li>
+              <a href="/dashboardwebsite/#aboutcontent" onclick="closeSideNav()">About</a>
+            </li>
+            <li>
+              <a href="/dashboardwebsite/#whyuscontent" onclick="closeSideNav()">Why Us</a>
+            </li>  
+            <li>
+              <a href="/dashboardservices" >Services</a>
+            </li>
+            <li>
+              <a href="/dashboardgallery">Gallery</a>
+            </li>             
+            <li>
+              <a href="/admin">Admin staff</a>
+            </li> 
+            <li>
+              <a href="#" onclick="openContactModal()">Contact</a>
+            </li>  
+                    
+          </ul> 
+                 
+        </div>
+
+      </div>
+      
+
+      </div>      
